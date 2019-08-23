@@ -6,12 +6,20 @@ import {Quote}from '../quote';
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
-  // quotes:Quote[]=[
-  //   {id:1,name:'Turn your wounds into wisdom',author:'anitha'},
-  //   {id:2,name:'Tough times never last, but tough people do',author:'flower'},
-  //   {id:3,name:'The day is what you make it! So why not make it a great one?',author:'blandine'},
-  //   {id:4,name:'It is never too late to be what you might have been.',author:'laetitia'},
-  // ];
+  quotes:Quote[]=[
+    new Quote(1,'Turn your wounds into wisdom','anitha'),
+    new Quote(2,'Tough times never last, but tough people do','flower'),
+    new Quote(3,'The day is what you make it! So why not make it a great one?','blandine'),
+    new Quote(4,'It is never too late to be what you might have been.','laetitia'),
+  ];
+  toggleDetails(index){
+    this.quotes[index].showAuthor = !this.quotes[index].showAuthor;
+  }
+  completeGoal(isComplete, index){
+    if (isComplete) {
+      this.quotes.splice(index,1);
+    }
+  }
   constructor() { }
 
   ngOnInit() {
