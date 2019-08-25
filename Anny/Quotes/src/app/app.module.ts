@@ -23,6 +23,7 @@ import { QuoteFormComponent } from './quote-form/quote-form.component';
     AppRoutingModule,
     FormsModule
   ],
- 
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
