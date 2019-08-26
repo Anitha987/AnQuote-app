@@ -15,15 +15,15 @@ export class QuoteComponent implements OnInit {
   toggleDetails(index){
     this.quotes[index].showAuthor = !this.quotes[index].showAuthor;
   }
-  deleteGoal(isComplete, index){
+  deleteQuote(isComplete, index){
     if (isComplete) {
-      let toDelete=confirm('are you sure you want to delete ${this.quotes[index].name}?')
+      let toDelete=confirm('are you sure you want to delete this quote?')
       if(toDelete){
       this.quotes.splice(index,1);
       }
     }
   }
-  addNewGoal(quote){
+  addNewQuote(quote){
     let quoteLength = this.quotes.length;
     quote.id = quoteLength+1;
     quote.completeDate = new Date(quote.completeDate)
